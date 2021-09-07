@@ -1,8 +1,13 @@
 # Components
 
 - **Less is Better**
+- **Document First**
 
 # To do
+
+- Slider
+- Date
+- Layout
 
 ## 1.x.x
 
@@ -11,51 +16,135 @@
 
 ## 2.x.x
 
-- try Vue3.x, maybe use another library
+- try Vue3.x / React, maybe use another Repo,
 
-# Classification
+# 1.x.x Classification
 
 ## Basic
 
-- button
-- radioGroup
-- checkboxGroup
-- switch
-- table
-- input
-- card
-- select
-- field
-- pagination
-- tag
-- tooptip
+- Button
 
-# How to create/update a component
+### Button
 
-- **Document First**
-- Confirm Properties (props,slots)
-- Code
+| Name     | Type     | Desc                    |
+| -------- | -------- | ----------------------- |
+| label    | String   |                         |
+| disabled | Boonlean |                         |
+| click    | Function |                         |
+| type     | Function | primary(default),danger |
 
-# Note
+## Display
 
-## Card
+- Card
+- Dialog
+- Pagination
+- Progress
+- Table
+- Tabs
+- Tag
+- Tooltip
 
-### Properties
+### Card
 
 | Name    | Type        | Desc |
 | ------- | ----------- | ---- |
-| title   | slot,String |      |
-| extra   | slot        |      |
-| header  | slot        |      |
-| content | slot        |      |
-| footer  | slot        |      |
+| title   | Slot,String |      |
+| extra   | Slot        |      |
+| header  | Slot        |      |
+| content | Slot        |      |
+| footer  | Slot        |      |
 
-## Input
+### Dialog
 
-[MDN-input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input)  
-[MDN-textarea](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)
+| Name         | Type        | Desc           |
+| ------------ | ----------- | -------------- |
+| show/v-model | Boonlean    |                |
+| title        | Slot,String |                |
+| showFooter   | Boonlean    | default：false |
+| header       | Slot        |                |
+| footer       | Slot        |                |
+| content      | Slot        |                |
 
-### Properties
+### Pagination
+
+| Name            | Type     | Desc          |
+| --------------- | -------- | ------------- |
+| current/v-model | Number   | default:1     |
+| total           | Number   |               |
+| pageSize        | Number   | default:10    |
+| change          | Function | (current)=>{} |
+
+### Progress
+
+| Name          | Type   | Desc           |
+| ------------- | ------ | -------------- |
+| value/v-model | Number | range in 1-100 |
+
+### Table
+
+| Name      | Type     | Desc                      |
+| --------- | -------- | ------------------------- |
+| data      | [Object] |                           |
+| columns   | [Object] | {lable,value:Slot/String} |
+| draggable | Boonlean |                           |
+
+### Tabs
+
+| Name    | Type     | Desc          |
+| ------- | -------- | ------------- |
+| options | [Object] | {lable,value} |
+
+### Tag
+
+| Name     | Type     | Desc          |
+| -------- | -------- | ------------- |
+| closable | Boonlean | default:false |
+| close    | Function | (current)=>{} |
+
+### Tooltip
+
+| Name      | Type   | Desc                                                                                                           |
+| --------- | ------ | -------------------------------------------------------------------------------------------------------------- |
+| label     | String |                                                                                                                |
+| placement | String | top(default) left right bottom topLeft topRight bottomLeft bottomRight leftTop leftBottom rightTop rightBottom |
+
+## Form
+
+- Cascader
+- CheckboxGroup
+- Field(form-item)
+- Form
+- Input
+- RadioGroup
+- Select
+- Slider
+- Switch
+
+### Cascader
+
+| Name        | Type     | Desc          |
+| ----------- | -------- | ------------- |
+| placeholder | String   |               |
+| options     | [Object] | {lable,value} |
+| change      | Function |               |
+
+### CheckboxGroup
+
+| Name        | Type     | Desc          |
+| ----------- | -------- | ------------- |
+| placeholder | String   |               |
+| options     | [Object] | {lable,value} |
+| change      | Function |               |
+
+### Field
+
+| Name          | Type        | Desc                  |
+| ------------- | ----------- | --------------------- |
+| value/v-model | String      | default show as Input |
+| title         | Slot,String |                       |
+| required      | Boonlean    | default false         |
+
+### Input
 
 | Name          | Type     | Desc                             |
 | ------------- | -------- | -------------------------------- |
@@ -67,9 +156,7 @@
 | placeholder   | String   |                                  |
 | autosize      | Boonlean | default:true (only for textarea) |
 
-## RadioGroup
-
-### Properties
+### RadioGroup
 
 | Name          | Type     | Desc                              |
 | ------------- | -------- | --------------------------------- |
@@ -78,23 +165,10 @@
 | options       | [Object] | {lable,value}                     |
 | change        | Function |                                   |
 
-## Button
-
-### Properties
-
-| Name     | Type     | Desc                    |
-| -------- | -------- | ----------------------- |
-| label    | String   |                         |
-| disabled | Boonlean |                         |
-| click    | Function |                         |
-| type     | Function | primary(default),danger |
-
-## Select
+### Select
 
 - native option' style can not be modified
 - select will relized by ul&li
-
-### Properties
 
 | Name        | Type     | Desc          |
 | ----------- | -------- | ------------- |
@@ -103,80 +177,22 @@
 | options     | [Object] | {lable,value} |
 | change      | Function |               |
 
-## Switch
-
-### Properties
-
-| Name          | Type     | Desc |
-| ------------- | -------- | ---- |
-| value/v-model | Boonlean |      |
-| change        | Function |      |
-
-## Table
-
-### Properties
-
-| Name      | Type     | Desc                      |
-| --------- | -------- | ------------------------- |
-| data      | [Object] |                           |
-| columns   | [Object] | {lable,value:slot/String} |
-| draggable | Boonlean |                           |
-
-## Dialog
-
-### Properties
-
-| Name         | Type        | Desc           |
-| ------------ | ----------- | -------------- |
-| show/v-model | Boonlean    |                |
-| title        | slot,String |                |
-| showFooter   | Boonlean    | default：false |
-| header       | slot        |                |
-| footer       | slot        |                |
-| content      | slot        |                |
-
-## Slider
-
-### Properties
+### Slider
 
 | Name          | Type   | Desc           |
 | ------------- | ------ | -------------- |
 | value/v-model | Number | default：1-100 |
 
-## Field
+### Switch
 
-### Properties
+| Name          | Type     | Desc |
+| ------------- | -------- | ---- |
+| value/v-model | Boonlean |      |
 
-| Name     | Type        | Desc          |
-| -------- | ----------- | ------------- |
-| title    | slot,String |               |
-| required | Boonlean    | default false |
+## Layout
 
-## Pagination
+### Notification
 
-### Properties
-
-| Name            | Type     | Desc          |
-| --------------- | -------- | ------------- |
-| current/v-model | Number   | default:1     |
-| total           | Number   |               |
-| pageSize        | Number   | default:10    |
-| change          | Function | (current)=>{} |
-
-## Tag
-
-### Properties
-
-| Name     | Type     | Desc          |
-| -------- | -------- | ------------- |
-| closable | Boonlean | default:false |
-| close    | Function | (current)=>{} |
-
-## Tooltip
-
-### Properties
-
-| Name      | Type   | Desc                                                                                                           |
-| --------- | ------ | -------------------------------------------------------------------------------------------------------------- |
-| label     | String |                                                                                                                |
-| placement | String | top(default) left right bottom topLeft topRight bottomLeft bottomRight leftTop leftBottom rightTop rightBottom |
+- Alert
+- Message
+- Confirm
