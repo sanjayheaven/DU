@@ -1,12 +1,15 @@
 <template>
   <div class="select">
-    <input
-      class="du-input"
-      :readonly="!searchable"
-      @click="showOptions = !showOptions"
-      @blur="handleBlur"
-      v-model="selectLabel"
-    />
+    <span style="display: flex;align-items: center;">
+      <input
+        class="du-input"
+        :readonly="!searchable"
+        @click="showOptions = !showOptions"
+        @blur="handleBlur"
+        v-model="selectLabel"
+      />
+      <span class="select-icon"></span>
+    </span>
     <ul v-show="showOptions">
       <li
         v-for="(item, index) in options"
@@ -53,9 +56,16 @@ export default {
 }
 </script>
 <style scoped>
-.du-input {
-  box-sizing: border-box;
+.select {
   width: 200px;
+  position: relative;
+  transition: all 0.3s;
+}
+.du-input {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 220px;
   height: 35px;
   line-height: 35px;
   padding: 0px 10px;
@@ -64,21 +74,25 @@ export default {
   outline: none; /*cleat the outline black border*/
 }
 .du-input:hover {
+  cursor: pointer;
+  position: relative;
   border: 1px solid #1890ff;
+}
+
+.select-icon {
+  position: absolute;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  border-bottom: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
+  transform: translateY(-50%) rotate(45deg);
 }
 
 .du-input-textarea {
   height: 60px;
 }
-.select {
-  width: 200px;
-  position: relative;
-  transition: all 0.3s;
-}
-input:hover {
-  cursor: pointer;
-  position: relative;
-}
+
 .activeClass {
   background-color: #e6f7ff;
 }
@@ -94,8 +108,7 @@ ul {
 
   max-height: calc(35 * 5px); /*max show 5 li*/
   overflow-y: scroll;
-
-  z-index: 100;
+  z-index: 1000010001;
 }
 
 ul li {

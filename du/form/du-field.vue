@@ -14,8 +14,7 @@
         {{ title }}
       </div>
     </div>
-
-    <du_input
+    <du-input
       v-if="!$slots.default"
       :placeholder="placeholder"
       :type="type"
@@ -60,7 +59,7 @@ export default {
 }
 
 .field .title {
-  width: 80px;
+  width: 50px;
   margin-right: 10px;
   white-space: nowrap;
   overflow: hidden;

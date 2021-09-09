@@ -20,6 +20,7 @@
       class="nextMore"
     ></li>
     <li
+      v-if="pageCount > 1"
       @click="clickPage(pageCount)"
       :class="[pageCount == current && 'currentClass']"
     >
@@ -36,7 +37,7 @@ export default {
   model: { prop: "current", event: "change" },
   props: {
     current: { type: Number, default: 1 },
-    total: { type: Number, default: 0 },
+    total: { type: Number, default: 0, required: true },
     pageSize: { type: Number, default: 10 },
   },
   computed: {

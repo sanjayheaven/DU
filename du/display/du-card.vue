@@ -51,7 +51,8 @@ export default {
 }
 
 .card .content {
-  overflow-y: auto;
+  /* height: max-content; */
+  /* overflow-y: auto; */
   padding: 18px 20px;
 }
 .card .footer {

@@ -102,7 +102,10 @@ export default {
     opacity: 1;
   }
 }
-
+.dialog .modal-scale {
+  transform: scale(0);
+  transition: all 0.3s ease-out;
+}
 .dialog .modal .header {
   padding: 15px 20px;
   border-bottom: 1px solid #d9d9d9;
